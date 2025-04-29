@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LibertadFinanciera - Tu camino hacia la independencia económica</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0077B6',secondary:'#48BB78'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input[type="number"] {
+-moz-appearance: textfield;
+}
+.custom-checkbox {
+position: relative;
+display: inline-block;
+width: 20px;
+height: 20px;
+background-color: white;
+border: 2px solid #ddd;
+border-radius: 4px;
+cursor: pointer;
+transition: all 0.2s;
+}
+.custom-checkbox.checked {
+background-color: #0077B6;
+border-color: #0077B6;
+}
+.custom-checkbox.checked:after {
+content: '';
+position: absolute;
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+.custom-switch-track {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #e2e8f0;
+border-radius: 34px;
+transition: 0.4s;
+}
+.custom-switch-thumb {
+position: absolute;
+height: 20px;
+width: 20px;
+left: 2px;
+bottom: 2px;
+background-color: white;
+border-radius: 50%;
+transition: 0.4s;
+}
+.custom-switch.active .custom-switch-track {
+background-color: #0077B6;
+}
+.custom-switch.active .custom-switch-thumb {
+transform: translateX(26px);
+}
+.custom-range {
+-webkit-appearance: none;
+width: 100%;
+height: 8px;
+border-radius: 4px;
+background: #e2e8f0;
+outline: none;
+}
+.custom-range::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #0077B6;
+cursor: pointer;
+}
+.custom-range::-moz-range-thumb {
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #0077B6;
+cursor: pointer;
+border: none;
+}
+.tab-active {
+color: #0077B6;
+border-bottom: 2px solid #0077B6;
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Navegación -->
+<nav class="bg-white shadow-sm py-4 px-6 w-full">
+<div class="max-w-7xl mx-auto flex justify-between items-center">
+<div class="flex items-center">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">FinanzaLibre</a>
+<div class="hidden md:flex ml-10 space-x-8">
+<a href="#" class="text-gray-800 hover:text-primary font-medium">Inicio</a>
+<a href="#herramientas" class="text-gray-800 hover:text-primary font-medium">Herramientas</a>
+<a href="#curso" class="text-gray-800 hover:text-primary font-medium">Curso</a>
+<a href="#" class="text-gray-800 hover:text-primary font-medium">Blog</a>
+<a href="#" class="text-gray-800 hover:text-primary font-medium">Contacto</a>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hidden md:block text-gray-700 hover:text-primary whitespace-nowrap">
+Iniciar sesión
+</button>
+<button class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">
+Registrarse
+</button>
+<div class="md:hidden w-6 h-6 flex items-center justify-center">
+<i class="ri-menu-line ri-lg"></i>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative w-full overflow-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=A%20modern%2C%20clean%20financial%20success%20scene%20with%20a%20gradient%20from%20white%20to%20light%20blue%20on%20the%20left%20side%20transitioning%20to%20a%20professional%20looking%20at%20financial%20charts%20and%20graphs%20on%20a%20tablet%20on%20the%20right%20side.%20The%20left%20side%20should%20have%20plenty%20of%20clean%20white%20space%20for%20text.%20Soft%20lighting%2C%20professional%20atmosphere%2C%20minimalist%20style%2C%20high-quality%20rendering&width=1920&height=800&seq=1&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+<div class="relative max-w-7xl mx-auto px-6 py-20 md:py-28 flex flex-col md:flex-row w-full">
+<div class="md:w-1/2 z-10">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">Tu camino hacia la libertad financiera comienza aquí</h1>
+<p class="mt-6 text-lg text-gray-700 max-w-xl">Aprende a tomar el control de tus finanzas, construir un fondo de emergencia sólido y alcanzar la independencia económica con nuestras herramientas y asesoramiento personalizado.</p>
+<div class="mt-8 flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white px-6 py-3 rounded-button hover:bg-opacity-90 transition-all font-medium !rounded-button whitespace-nowrap">
+Comenzar ahora
+</button>
+<button class="border border-gray-300 text-gray-700 px-6 py-3 rounded-button hover:bg-gray-50 transition-all font-medium !rounded-button whitespace-nowrap">
+Ver demostración
+</button>
+</div>
+<div class="mt-10 flex items-center space-x-8">
+<div class="flex flex-col">
+<span class="text-3xl font-bold text-primary">15,000+</span>
+<span class="text-sm text-gray-600">Usuarios activos</span>
+</div>
+<div class="flex flex-col">
+<span class="text-3xl font-bold text-primary">98%</span>
+<span class="text-sm text-gray-600">Satisfacción</span>
+</div>
+<div class="flex flex-col">
+<span class="text-3xl font-bold text-primary">4.9/5</span>
+<span class="text-sm text-gray-600">Valoración</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección de Beneficios -->
+<section class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900">¿Por qué elegir nuestro asesoramiento?</h2>
+<p class="mt-4 text-gray-600 max-w-2xl mx-auto">Nuestro enfoque combina herramientas prácticas, conocimientos esenciales y asesoramiento personalizado para ayudarte a alcanzar tus metas financieras.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6">
+<i class="ri-shield-check-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Seguridad financiera</h3>
+<p class="text-gray-600">Aprende a construir un fondo de emergencia sólido para hacer frente a imprevistos con total tranquilidad.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-6">
+<i class="ri-line-chart-line ri-xl text-secondary"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Crecimiento constante</h3>
+<p class="text-gray-600">Estrategias de inversión probadas para hacer crecer tu patrimonio de manera sostenible y progresiva.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-purple-50 rounded-full flex items-center justify-center mb-6">
+<i class="ri-book-open-line ri-xl text-purple-600"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Conocimiento práctico</h3>
+<p class="text-gray-600">Información concisa y aplicable, sin rodeos ni teorías complejas, solo lo que realmente funciona.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Herramientas Financieras -->
+<section id="herramientas" class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900">Herramientas para tu éxito financiero</h2>
+<p class="mt-4 text-gray-600 max-w-2xl mx-auto">Utiliza nuestras calculadoras y planificadores para visualizar tu progreso y tomar decisiones informadas.</p>
+</div>
+<div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 mb-8">
+<div class="flex flex-col md:flex-row gap-8">
+<div class="md:w-1/2">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Calculadora de ahorro</h3>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Ingreso mensual (€)</label>
+<input type="number" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="2,500" id="income-input">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Porcentaje de ahorro (%)</label>
+<input type="range" min="5" max="50" value="20" class="custom-range" id="savings-percentage">
+<div class="flex justify-between mt-1">
+<span class="text-xs text-gray-500">5%</span>
+<span class="text-xs text-gray-500" id="percentage-value">20%</span>
+<span class="text-xs text-gray-500">50%</span>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Plazo (meses)</label>
+<div class="flex space-x-2">
+<button class="px-4 py-2 border border-gray-300 rounded-button whitespace-nowrap tab-active" data-months="12">1 año</button>
+<button class="px-4 py-2 border border-gray-300 rounded-button whitespace-nowrap" data-months="24">2 años</button>
+<button class="px-4 py-2 border border-gray-300 rounded-button whitespace-nowrap" data-months="60">5 años</button>
+</div>
+</div>
+<div class="pt-4">
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Ahorro mensual:</span>
+<span class="text-sm font-semibold text-primary" id="monthly-savings">€500</span>
+</div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-gray-700">Ahorro total:</span>
+<span class="text-sm font-semibold text-primary" id="total-savings">€6,000</span>
+</div>
+<div class="flex justify-between">
+<span class="text-sm font-medium text-gray-700">Fondo de emergencia recomendado:</span>
+<span class="text-sm font-semibold text-primary" id="emergency-fund">€15,000</span>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Progreso financiero</h3>
+<div id="savings-chart" class="w-full h-80"></div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Planificador de presupuesto</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Categoría de gasto</label>
+<div class="flex space-x-2">
+<div class="w-full">
+<div class="relative">
+<button class="w-full px-4 py-2 border border-gray-300 rounded text-left focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent flex justify-between items-center" id="category-dropdown">
+<span>Seleccionar categoría</span>
+<i class="ri-arrow-down-s-line"></i>
+</button>
+<div class="hidden absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded shadow-lg" id="category-options">
+<div class="py-1">
+<a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-value="vivienda">Vivienda</a>
+<a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-value="alimentacion">Alimentación</a>
+<a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-value="transporte">Transporte</a>
+<a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-value="ocio">Ocio</a>
+<a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-value="otros">Otros</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Importe (€)</label>
+<input type="number" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="0">
+</div>
+<button id="add-budget-btn" class="bg-primary text-white px-4 py-2 rounded-button hover:bg-opacity-90 transition-all font-medium !rounded-button whitespace-nowrap">
+Añadir a presupuesto
+</button>
+<div id="budget-message" class="hidden mt-2 p-3 rounded text-sm"></div>
+</div>
+<div class="mt-6">
+<h4 class="text-lg font-medium text-gray-800 mb-3">Distribución recomendada</h4>
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-600">Necesidades básicas</span>
+<span class="text-sm font-medium">50%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 50%"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-600">Ahorro e inversión</span>
+<span class="text-sm font-medium">30%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 30%"></div>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-600">Gastos personales</span>
+<span class="text-sm font-medium">20%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-purple-500 h-2 rounded-full" style="width: 20%"></div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div id="budget-chart" class="w-full h-80"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sección del Curso -->
+<section id="curso" class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row gap-12">
+<div class="md:w-1/2">
+<h2 class="text-3xl font-bold text-gray-900 mb-6">Curso Esencial de Libertad Financiera</h2>
+<p class="text-gray-600 mb-6">Hemos condensado los principios más valiosos de los mejores libros de finanzas personales en un único documento claro y conciso. Sin rodeos, solo estrategias prácticas que funcionan.</p>
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Lo que aprenderás:</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-0.5">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="text-gray-700">Cómo crear y mantener un fondo de emergencia efectivo</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-0.5">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="text-gray-700">Estrategias para eliminar deudas de forma inteligente</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-0.5">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="text-gray-700">Principios de inversión para principiantes y nivel intermedio</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-0.5">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="text-gray-700">Técnicas para aumentar tus ingresos y optimizar gastos</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-0.5">
+<i class="ri-check-line text-primary"></i>
+</div>
+<span class="text-gray-700">Cómo establecer metas financieras realistas y alcanzarlas</span>
+</li>
+</ul>
+</div>
+<div class="flex items-center mb-8">
+<div class="flex -space-x-2 mr-4">
+<img class="w-10 h-10 rounded-full border-2 border-white" src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20middle-aged%20Spanish%20man%20with%20short%20dark%20hair%20and%20a%20friendly%20smile%2C%20business%20casual%20attire%2C%20neutral%20background%2C%20high%20quality%20portrait&width=100&height=100&seq=2&orientation=squarish" alt="Usuario">
+<img class="w-10 h-10 rounded-full border-2 border-white" src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20young%20Spanish%20woman%20with%20medium-length%20brown%20hair%20and%20a%20confident%20smile%2C%20business%20casual%20attire%2C%20neutral%20background%2C%20high%20quality%20portrait&width=100&height=100&seq=3&orientation=squarish" alt="Usuario">
+<img class="w-10 h-10 rounded-full border-2 border-white" src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20Spanish%20woman%20in%20her%2030s%20with%20long%20dark%20hair%20and%20glasses%2C%20friendly%20expression%2C%20business%20casual%20attire%2C%20neutral%20background%2C%20high%20quality%20portrait&width=100&height=100&seq=4&orientation=squarish" alt="Usuario">
+</div>
+<p class="text-sm text-gray-600">Más de <span class="font-semibold">3,500 personas</span> ya han transformado sus finanzas con este curso</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+<div class="flex justify-between items-center mb-4">
+<div>
+<span class="text-3xl font-bold text-gray-900">€39.99</span>
+<span class="text-sm text-gray-500 line-through ml-2">€79.99</span>
+</div>
+<span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">50% DESCUENTO</span>
+</div>
+<button class="w-full bg-primary text-white py-3 rounded-button hover:bg-opacity-90 transition-all font-medium !rounded-button whitespace-nowrap mb-4">
+Obtener curso ahora
+</button>
+<div class="flex justify-center space-x-4 text-sm text-gray-500">
+<span class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-shield-check-line text-primary"></i>
+</div>
+Garantía de 30 días
+</span>
+<span class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-download-line text-primary"></i>
+</div>
+Acceso inmediato
+</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2">
+<div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+<div class="p-6 border-b border-gray-100">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Vista previa del contenido</h3>
+<p class="text-gray-600 text-sm">Un vistazo a lo que encontrarás en el curso completo</p>
+</div>
+<div class="divide-y divide-gray-100">
+<div class="p-6 hover:bg-gray-50 transition-colors">
+<div class="flex justify-between items-center">
+<h4 class="font-medium text-gray-900">Módulo 1: Fundamentos financieros</h4>
+<span class="text-xs text-gray-500">25 min</span>
+</div>
+<p class="mt-2 text-sm text-gray-600">Conceptos esenciales para construir una base financiera sólida</p>
+</div>
+<div class="p-6 hover:bg-gray-50 transition-colors">
+<div class="flex justify-between items-center">
+<h4 class="font-medium text-gray-900">Módulo 2: Presupuesto efectivo</h4>
+<span class="text-xs text-gray-500">30 min</span>
+</div>
+<p class="mt-2 text-sm text-gray-600">Cómo crear y mantener un presupuesto que realmente funcione</p>
+</div>
+<div class="p-6 hover:bg-gray-50 transition-colors">
+<div class="flex justify-between items-center">
+<h4 class="font-medium text-gray-900">Módulo 3: Fondo de emergencia</h4>
+<span class="text-xs text-gray-500">20 min</span>
+</div>
+<p class="mt-2 text-sm text-gray-600">Estrategias para construir tu seguridad financiera paso a paso</p>
+</div>
+<div class="p-6 hover:bg-gray-50 transition-colors">
+<div class="flex justify-between items-center">
+<h4 class="font-medium text-gray-900">Módulo 4: Inversiones básicas</h4>
+<span class="text-xs text-gray-500">35 min</span>
+</div>
+<p class="mt-2 text-sm text-gray-600">Introducción a los principios de inversión para principiantes</p>
+</div>
+<div class="p-6 hover:bg-gray-50 transition-colors bg-gray-50">
+<div class="flex justify-between items-center text-gray-400">
+<h4 class="font-medium">Módulo 5: Estrategias avanzadas</h4>
+<div class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-lock-line"></i>
+</div>
+<span class="text-xs">40 min</span>
+</div>
+</div>
+<p class="mt-2 text-sm text-gray-400">Técnicas para maximizar tu patrimonio a largo plazo</p>
+</div>
+<div class="p-6 hover:bg-gray-50 transition-colors bg-gray-50">
+<div class="flex justify-between items-center text-gray-400">
+<h4 class="font-medium">Módulo 6: Libertad financiera</h4>
+<div class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-1">
+<i class="ri-lock-line"></i>
+</div>
+<span class="text-xs">45 min</span>
+</div>
+</div>
+<p class="mt-2 text-sm text-gray-400">El camino definitivo hacia la independencia económica</p>
+</div>
+</div>
+</div>
+<div class="mt-8 bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+<h3 class="text-lg font-semibold text-gray-900 mb-4">Lo que dicen nuestros estudiantes</h3>
+<div class="space-y-4">
+<div class="border-l-4 border-primary pl-4">
+<p class="text-gray-600 italic">"Este curso ha transformado mi relación con el dinero. En solo 3 meses he conseguido crear mi fondo de emergencia completo."</p>
+<p class="mt-2 text-sm font-medium text-gray-900">Carlos Rodríguez, Madrid</p>
+</div>
+<div class="border-l-4 border-primary pl-4">
+<p class="text-gray-600 italic">"Información clara y directa, sin rodeos. Por fin entiendo cómo funcionan las inversiones y he empezado a construir mi cartera."</p>
+<p class="mt-2 text-sm font-medium text-gray-900">Laura Martínez, Barcelona</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Consejos Personalizados -->
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900">Consejos personalizados para ti</h2>
+<p class="mt-4 text-gray-600 max-w-2xl mx-auto">Completa tu perfil financiero y recibe recomendaciones adaptadas a tu situación actual.</p>
+</div>
+<div class="bg-white rounded-lg shadow-sm border border-gray-100 p-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-6">Tu perfil financiero</h3>
+<form class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Edad</label>
+<div class="relative">
+<button class="w-full px-4 py-2 border border-gray-300 rounded text-left focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent flex justify-between items-center" id="age-dropdown">
+<span>Seleccionar rango de edad</span>
+<i class="ri-arrow-down-s-line"></i>
+</button>
+<div class="hidden absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded shadow-lg" id="age-options">
+<div class="py-1">
+<a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-value="18-25">18-25 años</a>
+<a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-value="26-35">26-35 años</a>
+<a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-value="36-45">36-45 años</a>
+<a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-value="46-55">46-55 años</a>
+<a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" data-value="56+">56+ años</a>
+</div>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Situación laboral</label>
+<div class="grid grid-cols-2 gap-3">
+<div class="flex items-center">
+<div class="custom-checkbox" id="employed-checkbox"></div>
+<label class="ml-2 text-sm text-gray-700">Empleado</label>
+</div>
+<div class="flex items-center">
+<div class="custom-checkbox" id="self-employed-checkbox"></div>
+<label class="ml-2 text-sm text-gray-700">Autónomo</label>
+</div>
+<div class="flex items-center">
+<div class="custom-checkbox" id="student-checkbox"></div>
+<label class="ml-2 text-sm text-gray-700">Estudiante</label>
+</div>
+<div class="flex items-center">
+<div class="custom-checkbox" id="retired-checkbox"></div>
+<label class="ml-2 text-sm text-gray-700">Jubilado</label>
+</div>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">¿Tienes deudas?</label>
+<div class="flex items-center">
+<div class="custom-switch" id="debt-switch">
+<div class="custom-switch-track"></div>
+<div class="custom-switch-thumb"></div>
+</div>
+<span class="ml-2 text-sm text-gray-700" id="debt-status">No</span>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Objetivos financieros principales</label>
+<div class="space-y-2">
+<div class="flex items-center">
+<div class="custom-checkbox" id="emergency-checkbox"></div>
+<label class="ml-2 text-sm text-gray-700">Crear fondo de emergencia</label>
+</div>
+<div class="flex items-center">
+<div class="custom-checkbox" id="debt-checkbox"></div>
+<label class="ml-2 text-sm text-gray-700">Eliminar deudas</label>
+</div>
+<div class="flex items-center">
+<div class="custom-checkbox" id="invest-checkbox"></div>
+<label class="ml-2 text-sm text-gray-700">Comenzar a invertir</label>
+</div>
+<div class="flex items-center">
+<div class="custom-checkbox" id="retirement-checkbox"></div>
+<label class="ml-2 text-sm text-gray-700">Planificar jubilación</label>
+</div>
+</div>
+</div>
+<button type="button" class="bg-primary text-white px-6 py-2 rounded-button hover:bg-opacity-90 transition-all font-medium !rounded-button whitespace-nowrap">
+Obtener consejos
+</button>
+</form>
+</div>
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-6">Recomendaciones para ti</h3>
+<div class="bg-blue-50 p-6 rounded-lg mb-6">
+<h4 class="font-medium text-gray-900 mb-2">Prioridad #1: Establece tu fondo de emergencia</h4>
+<p class="text-gray-700 text-sm mb-4">Basado en tu perfil, recomendamos que tu primer objetivo sea acumular un fondo de emergencia equivalente a 3-6 meses de gastos.</p>
+<div class="flex items-center justify-between">
+<span class="text-sm text-gray-600">Progreso estimado:</span>
+<span class="text-sm font-medium">25%</span>
+</div>
+<div class="w-full bg-white rounded-full h-2 mt-1">
+<div class="bg-primary h-2 rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-white border border-gray-100 rounded-lg p-4 hover:shadow-sm transition-shadow">
+<div class="flex">
+<div class="w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center mr-3">
+<i class="ri-money-dollar-circle-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Regla 50/30/20</h4>
+<p class="text-sm text-gray-600 mt-1">Destina el 50% de tus ingresos a necesidades, 30% a deseos y 20% a ahorro e inversión.</p>
+</div>
+</div>
+</div>
+<div class="bg-white border border-gray-100 rounded-lg p-4 hover:shadow-sm transition-shadow">
+<div class="flex">
+<div class="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center mr-3">
+<i class="ri-bank-card-line text-secondary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Elimina deudas de alto interés</h4>
+<p class="text-sm text-gray-600 mt-1">Prioriza el pago de tarjetas de crédito y préstamos con intereses elevados antes de invertir.</p>
+</div>
+</div>
+</div>
+<div class="bg-white border border-gray-100 rounded-lg p-4 hover:shadow-sm transition-shadow">
+<div class="flex">
+<div class="w-10 h-10 bg-purple-50 rounded-full flex items-center justify-center mr-3">
+<i class="ri-calendar-check-line text-purple-600"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Automatiza tus ahorros</h4>
+<p class="text-sm text-gray-600 mt-1">Configura transferencias automáticas a tu cuenta de ahorro el día que recibas tu nómina.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<a href="#" class="text-primary font-medium flex items-center">
+Ver todos los consejos
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Panel de Progreso -->
+<section class="py-16 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900">Tu camino hacia la libertad financiera</h2>
+<p class="mt-4 text-gray-600 max-w-2xl mx-auto">Visualiza tu progreso y celebra cada hito alcanzado en tu viaje hacia la independencia económica.</p>
+</div>
+<div class="bg-white rounded-lg shadow-sm border border-gray-100 p-8">
+<div class="flex flex-col md:flex-row gap-8">
+<div class="md:w-1/2">
+<h3 class="text-xl font-semibold text-gray-900 mb-6">Progreso de objetivos</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between items-center mb-2">
+<div>
+<h4 class="font-medium text-gray-900">Fondo de emergencia</h4>
+<p class="text-sm text-gray-600">Meta: €15,000</p>
+</div>
+<span class="text-sm font-medium text-primary">€3,750 / €15,000</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-3">
+<div class="bg-primary h-3 rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<div>
+<h4 class="font-medium text-gray-900">Reducción de deudas</h4>
+<p class="text-sm text-gray-600">Meta: €0</p>
+</div>
+<span class="text-sm font-medium text-primary">€2,500 / €10,000</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-3">
+<div class="bg-secondary h-3 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<div>
+<h4 class="font-medium text-gray-900">Inversiones</h4>
+<p class="text-sm text-gray-600">Meta: €50,000</p>
+</div>
+<span class="text-sm font-medium text-primary">€5,000 / €50,000</span>
+</div>
+<div class="w-full bg-gray-100 rounded-full h-3">
+<div class="bg-purple-500 h-3 rounded-full" style="width: 10%"></div>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h3 class="text-xl font-semibold text-gray-900 mb-4">Hitos alcanzados</h3>
+<div class="relative pl-8 before:content-[''] before:absolute before:left-3 before:top-0 before:h-full before:w-0.5 before:bg-gray-200">
+<div class="relative mb-6">
+<div class="absolute left-[-30px] w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+<i class="ri-check-line text-white text-xs"></i>
+</div>
+<h4 class="font-medium text-gray-900">Primer mes de ahorro consistente</h4>
+<p class="text-sm text-gray-600 mt-1">Has ahorrado más del 20% de tus ingresos durante un mes completo.</p>
+<span class="text-xs text-gray-500 mt-1 block">15 de marzo, 2025</span>
+</div>
+<div class="relative mb-6">
+<div class="absolute left-[-30px] w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+<i class="ri-check-line text-white text-xs"></i>
+</div>
+<h4 class="font-medium text-gray-900">Primer €1,000 ahorrados</h4>
+<p class="text-sm text-gray-600 mt-1">Has alcanzado tu primer hito importante en tu fondo de emergencia.</p>
+<span class="text-xs text-gray-500 mt-1 block">2 de abril, 2025</span>
+</div>
+<div class="relative">
+<div class="absolute left-[-30px] w-6 h-6 bg-gray-200 rounded-full flex items-center justify-center">
+<i class="ri-time-line text-gray-500 text-xs"></i>
+</div>
+<h4 class="font-medium text-gray-500">Fondo de emergencia completo</h4>
+<p class="text-sm text-gray-500 mt-1">Acumular el equivalente a 6 meses de gastos.</p>
+<span class="text-xs text-gray-500 mt-1 block">En progreso...</span>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2">
+<h3 class="text-xl font-semibold text-gray-900 mb-6">Evolución patrimonial</h3>
+<div id="wealth-chart" class="w-full h-80 mb-8"></div>
+<div class="bg-gray-50 p-6 rounded-lg">
+<h4 class="font-medium text-gray-900 mb-4">Próximos pasos recomendados</h4>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-3 mt-0.5">
+<span class="text-xs font-medium text-primary">1</span>
+</div>
+<div>
+<h5 class="font-medium text-gray-800">Aumenta tu fondo de emergencia</h5>
+<p class="text-sm text-gray-600 mt-1">Continúa ahorrando hasta alcanzar los €15,000 (objetivo: diciembre 2025).</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-3 mt-0.5">
+<span class="text-xs font-medium text-primary">2</span>
+</div>
+<div>
+<h5 class="font-medium text-gray-800">Termina de pagar tus deudas</h5>
+<p class="text-sm text-gray-600 mt-1">Prioriza el pago de la tarjeta de crédito con mayor interés (objetivo: junio 2025).</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-3 mt-0.5">
+<span class="text-xs font-medium text-primary">3</span>
+</div>
+<div>
+<h5 class="font-medium text-gray-800">Comienza a invertir regularmente</h5>
+<p class="text-sm text-gray-600 mt-1">Establece aportaciones mensuales a un fondo indexado (objetivo: septiembre 2025).</p>
+</div>
+</div>
+</div>
+<button class="mt-6 w-full bg-white border border-primary text-primary px-4 py-2 rounded-button hover:bg-primary hover:text-white transition-all font-medium !rounded-button whitespace-nowrap">
+Actualizar mis objetivos
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonios -->
+<section class="py-16 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900">Lo que dicen nuestros usuarios</h2>
+<p class="mt-4 text-gray-600 max-w-2xl mx-auto">Historias reales de personas que han transformado su situación financiera con nuestro asesoramiento.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+<div class="flex items-center mb-4">
+<img class="w-12 h-12 rounded-full mr-4" src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20Spanish%20man%20in%20his%2040s%20with%20short%20dark%20hair%20and%20glasses%2C%20friendly%20smile%2C%20business%20casual%20attire%2C%20neutral%20background%2C%20high%20quality%20portrait&width=100&height=100&seq=5&orientation=squarish" alt="Usuario">
+<div>
+<h4 class="font-medium text-gray-900">Antonio Fernández</h4>
+<div class="flex text-yellow-400 text-sm">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600">"Después de años viviendo nómina a nómina, gracias a este asesoramiento he conseguido ahorrar mi primer fondo de emergencia completo. La tranquilidad que siento ahora es indescriptible."</p>
+<p class="mt-4 text-sm text-gray-500">Valencia, España</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+<div class="flex items-center mb-4">
+<img class="w-12 h-12 rounded-full mr-4" src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20young%20Spanish%20woman%20with%20long%20brown%20hair%2C%20friendly%20smile%2C%20business%20casual%20attire%2C%20neutral%20background%2C%20high%20quality%20portrait&width=100&height=100&seq=6&orientation=squarish" alt="Usuario">
+<div>
+<h4 class="font-medium text-gray-900">Elena Martín</h4>
+<div class="flex text-yellow-400 text-sm">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600">"El curso es increíblemente práctico. En solo dos meses he reorganizado mis finanzas, eliminado una deuda que arrastraba hace años y empezado a invertir. Totalmente recomendable."</p>
+<p class="mt-4 text-sm text-gray-500">Sevilla, España</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+<div class="flex items-center mb-4">
+<img class="w-12 h-12 rounded-full mr-4" src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20middle-aged%20Spanish%20man%20with%20salt%20and%20pepper%20hair%20and%20beard%2C%20confident%20smile%2C%20business%20casual%20attire%2C%20neutral%20background%2C%20high%20quality%20portrait&width=100&height=100&seq=7&orientation=squarish" alt="Usuario">
+<div>
+<h4 class="font-medium text-gray-900">Miguel Sánchez</h4>
+<div class="flex text-yellow-400 text-sm">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600">"Las herramientas de planificación y las calculadoras me han ayudado a visualizar mi situación real y tomar decisiones informadas. He conseguido aumentar mi tasa de ahorro del 5% al 25%."</p>
+<p class="mt-4 text-sm text-gray-500">Barcelona, España</p>
+</div>
+</div>
+<div class="mt-12 text-center">
+<a href="#" class="text-primary font-medium hover:underline">Ver más testimonios</a>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="py-16 bg-primary bg-opacity-5">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="md:w-1/2">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Recibe consejos financieros semanales</h2>
+<p class="text-gray-600 mb-6">Suscríbete a nuestro newsletter y recibe consejos prácticos, herramientas exclusivas y las últimas tendencias en finanzas personales.</p>
+<div class="flex flex-col sm:flex-row gap-3">
+<input type="email" placeholder="Tu correo electrónico" class="flex-grow px-4 py-3 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+<button class="bg-primary text-white px-6 py-3 rounded-button hover:bg-opacity-90 transition-all font-medium !rounded-button whitespace-nowrap">
+Suscribirme
+</button>
+</div>
+<p class="text-xs text-gray-500 mt-3">Al suscribirte, aceptas nuestra política de privacidad. Puedes darte de baja en cualquier momento.</p>
+</div>
+<div class="md:w-1/2 flex justify-center">
+<img src="https://readdy.ai/api/search-image?query=A%20person%20reading%20financial%20information%20on%20a%20tablet%2C%20surrounded%20by%20financial%20charts%20and%20graphs%2C%20clean%20modern%20style%2C%20soft%20colors%2C%20minimalist%20design%2C%20high%20quality%20illustration&width=500&height=350&seq=8&orientation=landscape" alt="Newsletter" class="max-w-full h-auto rounded-lg">
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 block">FinanzaLibre</a>
+<p class="text-gray-400 text-sm">Ayudando a las personas a alcanzar la libertad financiera desde 2020.</p>
+<div class="flex space-x-4 mt-6">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-facebook-fill"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-twitter-x-fill"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-instagram-fill"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-linkedin-fill"></i>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Enlaces rápidos</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Herramientas</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Curso</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Recursos</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Guías gratuitas</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Calculadoras</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Webinars</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Testimonios</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Preguntas frecuentes</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Contacto</h3>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-2 mt-0.5">
+<i class="ri-mail-line text-gray-400"></i>
+</div>
+<span class="text-gray-400">info@finanzalibre.es</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-2 mt-0.5">
+<i class="ri-phone-line text-gray-400"></i>
+</div>
+<span class="text-gray-400">+34 91 123 45 67</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-2 mt-0.5">
+<i class="ri-map-pin-line text-gray-400"></i>
+</div>
+<span class="text-gray-400">Calle Gran Vía 28, Madrid, España</span>
+</li>
+</ul>
+<div class="mt-6">
+<h4 class="text-sm font-medium mb-2">Métodos de pago aceptados</h4>
+<div class="flex space-x-3">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-visa-fill text-gray-400 text-xl"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-mastercard-fill text-gray-400 text-xl"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-paypal-fill text-gray-400 text-xl"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-bank-card-fill text-gray-400 text-xl"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+<p class="text-sm text-gray-400">© 2025 FinanzaLibre. Todos los derechos reservados.</p>
+<div class="flex space-x-6 mt-4 md:mt-0">
+<a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Política de privacidad</a>
+<a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Términos de servicio</a>
+<a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Calculadora de ahorro
+const incomeInput = document.getElementById('income-input');
+const savingsPercentage = document.getElementById('savings-percentage');
+const percentageValue = document.getElementById('percentage-value');
+const monthlySavings = document.getElementById('monthly-savings');
+const totalSavings = document.getElementById('total-savings');
+const emergencyFund = document.getElementById('emergency-fund');
+let selectedMonths = 12;
+function updateCalculations() {
+const income = parseFloat(incomeInput.value) || 2500;
+const percentage = parseInt(savingsPercentage.value);
+const monthly = income * (percentage / 100);
+const total = monthly * selectedMonths;
+const emergency = income * 6;
+percentageValue.textContent = `${percentage}%`;
+monthlySavings.textContent = `€${monthly.toFixed(0)}`;
+totalSavings.textContent = `€${total.toFixed(0)}`;
+emergencyFund.textContent = `€${emergency.toFixed(0)}`;
+updateSavingsChart(monthly, selectedMonths);
+}
+incomeInput.addEventListener('input', updateCalculations);
+savingsPercentage.addEventListener('input', updateCalculations);
+document.querySelectorAll('[data-months]').forEach(button => {
+button.addEventListener('click', function() {
+document.querySelectorAll('[data-months]').forEach(btn => {
+btn.classList.remove('tab-active');
+});
+this.classList.add('tab-active');
+selectedMonths = parseInt(this.getAttribute('data-months'));
+updateCalculations();
+});
+});
+// Inicializar gráficos
+const savingsChart = echarts.init(document.getElementById('savings-chart'));
+const budgetChart = echarts.init(document.getElementById('budget-chart'));
+const wealthChart = echarts.init(document.getElementById('wealth-chart'));
+function updateSavingsChart(monthlySaving, months) {
+const xData = [];
+const yData = [];
+let accumulated = 0;
+for (let i = 0; i <= months; i++) {
+xData.push(`Mes ${i}`);
+yData.push(accumulated);
+accumulated += monthlySaving;
+}
+const option = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+top: 10,
+right: 10,
+bottom: 20,
+left: 60
+},
+xAxis: {
+type: 'category',
+data: xData,
+axisLine: {
+lineStyle: {
+color: '#e5e7eb'
+}
+},
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: {
+type: 'value',
+axisLine: {
+show: false
+},
+axisLabel: {
+color: '#1f2937',
+formatter: function(value) {
+return '€' + value;
+}
+},
+splitLine: {
+lineStyle: {
+color: '#e5e7eb'
+}
+}
+},
+series: [
+{
+name: 'Ahorro acumulado',
+type: 'line',
+data: yData,
+smooth: true,
+showSymbol: false,
+lineStyle: {
+width: 3,
+color: 'rgba(87, 181, 231, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [
+{
+offset: 0,
+color: 'rgba(87, 181, 231, 0.2)'
+},
+{
+offset: 1,
+color: 'rgba(87, 181, 231, 0.01)'
+}
+]
+}
+}
+}
+]
+};
+savingsChart.setOption(option);
+}
+// Gráfico de presupuesto
+let budgetData = [
+{ value: 1250, name: 'Vivienda', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+{ value: 500, name: 'Alimentación', itemStyle: { color: 'rgba(141, 211, 199, 1)' } },
+{ value: 300, name: 'Transporte', itemStyle: { color: 'rgba(251, 191, 114, 1)' } },
+{ value: 250, name: 'Ocio', itemStyle: { color: 'rgba(252, 141, 98, 1)' } },
+{ value: 200, name: 'Otros', itemStyle: { color: '#a3a3a3' } }
+];
+
+const budgetOption = {
+animation: false,
+tooltip: {
+trigger: 'item',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+orient: 'vertical',
+right: 10,
+top: 'center',
+textStyle: {
+color: '#1f2937'
+}
+},
+series: [
+{
+name: 'Presupuesto',
+type: 'pie',
+radius: ['40%', '70%'],
+avoidLabelOverlap: false,
+itemStyle: {
+borderRadius: 8,
+borderColor: '#fff',
+borderWidth: 2
+},
+label: {
+show: false
+},
+emphasis: {
+label: {
+show: false
+}
+},
+labelLine: {
+show: false
+},
+data: budgetData
+}
+]
+};
+budgetChart.setOption(budgetOption);
+// Gráfico de evolución patrimonial
+const wealthOption = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Ahorros', 'Inversiones', 'Deudas'],
+bottom: 0,
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+top: 10,
+right: 10,
+bottom: 60,
+left: 60
+},
+xAxis: {
+type: 'category',
+data: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep'],
+axisLine: {
+lineStyle: {
+color: '#e5e7eb'
+}
+},
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: {
+type: 'value',
+axisLine: {
+show: false
+},
+axisLabel: {
+color: '#1f2937',
+formatter: function(value) {
+return '€' + value;
+}
+},
+splitLine: {
+lineStyle: {
+color: '#e5e7eb'
+}
+}
+},
+series: [
+{
+name: 'Ahorros',
+type: 'line',
+data: [500, 1000, 1500, 2000, 2500, 3000, 3500, 3750, 4000],
+smooth: true,
+showSymbol: false,
+lineStyle: {
+width: 3,
+color: 'rgba(87, 181, 231, 1)'
+}
+},
+{
+name: 'Inversiones',
+type: 'line',
+data: [0, 0, 0, 1000, 2000, 3000, 4000, 4500, 5000],
+smooth: true,
+showSymbol: false,
+lineStyle: {
+width: 3,
+color: 'rgba(141, 211, 199, 1)'
+}
+},
+{
+name: 'Deudas',
+type: 'line',
+data: [10000, 9500, 9000, 8000, 7000, 5000, 4000, 3000, 2500],
+smooth: true,
+showSymbol: false,
+lineStyle: {
+width: 3,
+color: 'rgba(252, 141, 98, 1)'
+}
+}
+]
+};
+wealthChart.setOption(wealthOption);
+// Ajustar tamaño de gráficos al cambiar el tamaño de la ventana
+window.addEventListener('resize', function() {
+savingsChart.resize();
+budgetChart.resize();
+wealthChart.resize();
+});
+// Inicializar calculadora
+updateCalculations();
+// Dropdown de categoría
+const categoryDropdown = document.getElementById('category-dropdown');
+const categoryOptions = document.getElementById('category-options');
+categoryDropdown.addEventListener('click', function() {
+categoryOptions.classList.toggle('hidden');
+});
+document.querySelectorAll('#category-options a').forEach(option => {
+option.addEventListener('click', function(e) {
+e.preventDefault();
+categoryDropdown.querySelector('span').textContent = this.textContent;
+categoryOptions.classList.add('hidden');
+});
+});
+// Dropdown de edad
+const ageDropdown = document.getElementById('age-dropdown');
+const ageOptions = document.getElementById('age-options');
+ageDropdown.addEventListener('click', function() {
+ageOptions.classList.toggle('hidden');
+});
+document.querySelectorAll('#age-options a').forEach(option => {
+option.addEventListener('click', function(e) {
+e.preventDefault();
+ageDropdown.querySelector('span').textContent = this.textContent;
+ageOptions.classList.add('hidden');
+});
+});
+// Custom checkboxes
+document.querySelectorAll('.custom-checkbox').forEach(checkbox => {
+checkbox.addEventListener('click', function() {
+this.classList.toggle('checked');
+});
+});
+// Custom switch
+const debtSwitch = document.getElementById('debt-switch');
+const debtStatus = document.getElementById('debt-status');
+debtSwitch.addEventListener('click', function() {
+this.classList.toggle('active');
+debtStatus.textContent = this.classList.contains('active') ? 'Sí' : 'No';
+});
+// Función para actualizar el gráfico de presupuesto
+function updateBudgetChart() {
+const total = budgetData.reduce((sum, item) => sum + item.value, 0);
+const option = {
+...budgetOption,
+series: [{
+...budgetOption.series[0],
+data: budgetData
+}]
+};
+budgetChart.setOption(option);
+
+// Actualizar los porcentajes de distribución
+const percentages = document.querySelectorAll('.w-full.bg-gray-200.rounded-full .bg-primary, .w-full.bg-gray-200.rounded-full .bg-secondary, .w-full.bg-gray-200.rounded-full .bg-purple-500');
+const percentageTexts = document.querySelectorAll('.flex.justify-between.items-center .text-sm.font-medium');
+
+const basicNeeds = (budgetData[0].value + budgetData[1].value) / total * 100;
+const savings = budgetData[2].value / total * 100;
+const personal = (budgetData[3].value + budgetData[4].value) / total * 100;
+
+percentages[0].style.width = `${basicNeeds}%`;
+percentages[1].style.width = `${savings}%`;
+percentages[2].style.width = `${personal}%`;
+
+percentageTexts[0].textContent = `${Math.round(basicNeeds)}%`;
+percentageTexts[1].textContent = `${Math.round(savings)}%`;
+percentageTexts[2].textContent = `${Math.round(personal)}%`;
+}
+
+// Función para mostrar mensajes
+function showMessage(message, isError = false) {
+const messageEl = document.getElementById('budget-message');
+messageEl.textContent = message;
+messageEl.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+messageEl.classList.add(isError ? 'bg-red-100 text-red-800' : 'bg-green-100 text-green-800');
+
+setTimeout(() => {
+messageEl.classList.add('hidden');
+}, 3000);
+}
+
+// Manejar clic en el botón de añadir presupuesto
+document.getElementById('add-budget-btn').addEventListener('click', function() {
+const category = document.getElementById('category-dropdown').querySelector('span').textContent;
+const amount = parseFloat(document.querySelector('input[type="number"]').value);
+
+if (category === 'Seleccionar categoría') {
+showMessage('Por favor, selecciona una categoría', true);
+return;
+}
+
+if (!amount || amount <= 0) {
+showMessage('Por favor, ingresa un importe válido', true);
+return;
+}
+
+const categoryIndex = budgetData.findIndex(item => item.name.toLowerCase() === category.toLowerCase());
+if (categoryIndex !== -1) {
+budgetData[categoryIndex].value = amount;
+updateBudgetChart();
+showMessage('Presupuesto actualizado correctamente');
+
+// Limpiar campos
+document.getElementById('category-dropdown').querySelector('span').textContent = 'Seleccionar categoría';
+document.querySelector('input[type="number"]').value = '';
+}
+});
+
+// Cerrar dropdowns al hacer clic fuera
+document.addEventListener('click', function(e) {
+if (!categoryDropdown.contains(e.target)) {
+categoryOptions.classList.add('hidden');
+}
+if (!ageDropdown.contains(e.target)) {
+ageOptions.classList.add('hidden');
+}
+});
+});
+</script>
+</body>
+</html>
